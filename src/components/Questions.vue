@@ -30,7 +30,6 @@
                 classname="form-control"
                 placeholder="Please type your address"
                 v-on:placechanged="getAddressData"
-                country="us"
             >
             </vue-google-autocomplete>
         </b-field>
@@ -39,7 +38,14 @@
         <!-- // price -->
         
         <b-field label="What is the estimated purchase price?" class="col-lg-8 text-left mt-5">
-            <b-input v-model="estimatedprice"></b-input>
+            
+            <b-field>
+                <b-input placeholder="0.00" icon="dollar"
+                    type="number"
+                    min="0.00"
+                    step="0.01" value="1.00" v-model="estimatedprice">
+                </b-input>
+            </b-field>
         </b-field>
     
         
@@ -64,7 +70,14 @@
 
         <!-- // annual  -->
         <b-field label="What is your annual household income?" class="col-lg-8 text-left mt-5">
-            <b-input v-model="annual"></b-input>
+            <b-field>
+                <b-input placeholder="0.00" icon="dollar"
+                    type="number"
+                    min="0.00"
+                    step="0.01" value="1.00" v-model="annual">
+                </b-input>
+            </b-field>
+            
         </b-field>
     
         <!-- // own home -->
@@ -157,7 +170,8 @@
 
         <!-- // email address -->
         <b-field horizontal label="Email address" class="col-lg-7 text-left">
-            <b-input v-model="emailaddress"></b-input>
+            <b-input placeholder="Email"
+                type="email" v-model="emailaddress"></b-input>
         </b-field>
 
     </template>
@@ -176,7 +190,14 @@
         <!-- approximate purchase price -->
 
         <b-field label="How much is the approximate purchase price of the home you want to buy?" class="col-lg-8 text-left mt-5">
-            <b-input v-model="approximateprice"></b-input>
+            <b-field>
+                <b-input placeholder="0.00" icon="dollar"
+                    type="number"
+                    min="0.00"
+                    step="0.01" value="1.00" v-model="approximateprice">
+                </b-input>
+            </b-field>
+
         </b-field>
 
         <!-- // purchase realtor -->
@@ -199,7 +220,13 @@
         
         <!-- // annual  -->
         <b-field label="What is your annual household income?" class="col-lg-8 text-left mt-5">
-            <b-input v-model="annual"></b-input>
+            <b-field>
+                <b-input placeholder="0.00" icon="dollar"
+                    type="number"
+                    min="0.00"
+                    step="0.01" value="1.00" v-model="annual">
+                </b-input>
+            </b-field>
         </b-field>
     
         <!-- // own home -->
@@ -319,7 +346,6 @@ import VueGoogleAutocomplete from 'vue-google-autocomplete'
 export default {
     name: 'Questions',
     created() {
-        
     },
     data() {
         return {
@@ -370,7 +396,7 @@ export default {
             }else {
                 this.postBody = { "mainpurchase" : this.radioMain, "county": this.selectedCounty, "price" : this.approximateprice, "realtor" : this.radioREALTOR, "annual" : this.annual, "ownhome" : this.radioHome, "hometype" : this.radioPrimaryHome, "veteran" : this.radioVeteran, "disability" : this.radioDisability, "firstname" : this.firstname, "lastname" : this.lastname, "phonenumber" : this.phonenumber, "emailaddress" : this.emailaddress}
             }
-            this.$http.post('https://renercrows.000webhostapp.com/sendemail.php', {
+            this.$http.post('http://downpaymentlookup.com/sendemail.php', {
             body: this.postBody
             })
             .then(response => {

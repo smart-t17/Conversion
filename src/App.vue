@@ -9,7 +9,8 @@
         <div class="container">
 
             <div id="logo" class="pull-left">
-                <h1><a href="#body" class="scrollto">Reve<span>al</span></a></h1>
+                <img src="static/img/logo.png" alt="">
+                <!-- <h1><a href="#body" class="scrollto">DOWNPAYMENT<span>LOOKUP</span></a></h1> -->
             </div>
 
         </div>
@@ -58,10 +59,7 @@
     <footer id="footer">
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>Reveal</strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <a href="https://bootstrapmade.com/">Free Bootstrap Templates</a> by BootstrapMade
+                 Copyright &copy; 2018 <strong>DOWNPAYMENTLOOKUP</strong>. All Rights Reserved
             </div>
         </div>
     </footer>

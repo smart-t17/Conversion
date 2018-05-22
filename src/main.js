@@ -6,12 +6,15 @@ import router from './router'
 import Buefy from 'buefy'
 import 'buefy/lib/buefy.css'
 import axios from 'axios'
-import Hashids from 'hashids'
 
 Vue.prototype.$http = axios
-Vue.prototype.$hashid = Hashids
 Vue.config.productionTip = false
-Vue.use(Buefy,Hashids)
+
+Vue.use(Buefy, {
+  defaultIconPack: 'fa',
+  defaultContainerElement: '#content'
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
